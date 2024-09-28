@@ -25,6 +25,15 @@ class HomeScreenState extends State<HomeScreen>{
     "EMERGENCIES"
   ];  
 
+  final List<String> icons = const [
+    "assets/images/report.jpg",
+    // "assets/images/eps_ticket.jpg",
+    "assets/images/lost_and_found.jpg",
+    "assets/images/missing_person.jpg",
+    "assets/images/stations.jpg",
+    "assets/images/location.jpg"
+  ];  
+
 
   
 
@@ -63,6 +72,7 @@ class HomeScreenState extends State<HomeScreen>{
                           colCount: 2,
                           children: List.generate(
                             items.length, (x)=> UnitHomeItem(
+                            img: icons[x],
                             label: items[x], 
                             onclick: functions[x],
                             width: width)));

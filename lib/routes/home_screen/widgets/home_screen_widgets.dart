@@ -65,7 +65,7 @@ class HomeScreenWidgetsState extends State<HomeTopWidget>{
                       children: [
                         const Expanded(
                           child: Text(
-                            "Hello, John Doe", 
+                            "Hello, Admin", 
                             style: AppStyles.titleBoldWhiteTextStyle,)),
 
                         IconButton(
@@ -88,8 +88,11 @@ class HomeScreenWidgetsState extends State<HomeTopWidget>{
                           width: 50,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white
-                          ),
+                            color: Colors.white,
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/images/logo.jpg"))
+                          )
                         ),
 
                         const SizedBox(width: 10,),
@@ -171,11 +174,13 @@ class HomeScreenWidgetsState extends State<HomeTopWidget>{
 class UnitHomeItem extends StatelessWidget{
   final double width;
   final String label;
+  final String img;
   final Function() onclick;
   const UnitHomeItem({
     super.key,
     required this.label,
     required this.onclick,
+    required this.img,
     required this.width});
 
 
@@ -205,9 +210,15 @@ class UnitHomeItem extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 70,
-            width: 80,
-            color: AppColors.softWhiteColor,
+            height: 50,
+            width: 60,
+            
+            decoration: BoxDecoration(
+              color: AppColors.softWhiteColor,
+              image: DecorationImage(
+                fit: BoxFit.contain,
+                image: AssetImage(img))
+            ),
           ),
           const SizedBox(height: 10,),
           Text(

@@ -2,7 +2,7 @@ class AppConstants{
 
 
   ///API constants
-  static const String baseUrl = "http://192.168.0.106:8080/api/v1/";
+  static const String baseUrl = "http://154.72.206.212:8080/api/v1/";
 
 
   
